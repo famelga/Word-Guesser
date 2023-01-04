@@ -1,47 +1,39 @@
-var word = ["b","o", "o", "t", "c", "a", "m", "p"];
+var word = ["b", "o", "o", "t", "c", "a", "m", "p"];
+var letters = ["a", "b", "c", "d", "e", "f", "g",]
 var button = document.getElementById("btn");
-var timerEl = document.getElementById("timer");
+var keys = document.querySelector(".keyboard");
+
 function start() {
-    // var clock = setInterval(timer, 10000);
-    
-    var timeLeft = 10;
-      
-    
-    var timeInterval = setInterval(function () {
-      
-      
-      if (timeLeft > 1) {
-        
-        timerEl.textContent = timeLeft + ' seconds remaining';
-        
-        timeLeft--;
-      } else if (timeLeft === 1) {
-        
-        timerEl.textContent = timeLeft + ' second remaining';
-        timeLeft--;
-      } else {
-       
-        timerEl.textContent = '';
-        
-        clearInterval(timeInterval);
-  
-
-        displayMessage();
-      }
-    }, 1000);
-    
-    function counter(){
-    
-    }
-    
-    function keyevent(){
-    
-    }
-}
-    
-function timer(){
-   
+    // excute timer function
+for (var i = 0; i < letters.length; i++) {
+    var board = document.createElement("button");
+    board.textContent = letters[i]
+    board.value = letters[i]
+    board.onclick = check
+    keys.append(board);
 }
 
+    timer();
+    // Excute blanks function
+    blanks();
+    check();
+}
+
+function timer() {
+    // count down setInterval
+    // from 60sec, 60000 milisec
+    // when zero, game end, display score
+}
+
+function blanks() {
+    // blanks appear when game starts
+}
+
+function check(event) {
+    // event.preventDefault
+    // if/else - event.target (console.log)
+event.target
+console.log(event.target)
+console.log(event.target.value)
+}
 button.addEventListener("click", start)
-
